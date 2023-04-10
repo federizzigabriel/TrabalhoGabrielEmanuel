@@ -1,0 +1,64 @@
+﻿@model ControleDeContas.Models.Movimentacao
+
+@{
+    ViewData["Title"] = "Criar Movimentação";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData</h1>
+
+<h4>Movimentacao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataVencimento" class="control-label"></label>
+                <input asp-for="DataVencimento" class="form-control" />
+                <span asp-validation-for="DataVencimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPagamento" class="control-label"></label>
+                <input asp-for="DataPagamento" class="form-control" />
+                <span asp-validation-for="DataPagamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorDevido" class="control-label"></label>
+                <input asp-for="ValorDevido" class="form-control" />
+                <span asp-validation-for="ValorDevido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorPago" class="control-label"></label>
+                <input asp-for="ValorPago" class="form-control" />
+                <span asp-validation-for="ValorPago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalParcelas" class="control-label"></label>
+                <input asp-for="TotalParcelas" class="form-control" />
+                <span asp-validation-for="TotalParcelas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroParcela" class="control-label"></label>
+                <input asp-for="NumeroParcela" class="form-control" />
+                <span asp-validation-for="NumeroParcela" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para lista de Movimentações</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
